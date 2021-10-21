@@ -1,0 +1,5 @@
+FROM registry.cn.ice.go.cr/brmcn/oracle/boc:12.0.0.4.0
+COPY --chown=oracle:root boc_install.sh  /u01/oracle/container-scripts/boc_install.sh
+USER oracle
+WORKDIR $ORACLE_HOME/
+CMD ["/u01/oracle/container-scripts/start_boc.sh"]
