@@ -4,8 +4,7 @@ helm uninstall -n brm-demo-dev-apps kafka
 helm uninstall -n brm-demo-dev-apps brm12-core
 helm uninstall -n brm-demo-dev-apps brm12-op-job
 helm uninstall -n brm-demo-dev-apps nfs
-helm uninstall -n brm-demo-dev-db brm12-init-pindb
-helm uninstall -n brm-demo-dev-db brm12-pindb
+
 helm uninstall -n weblogic-operator weblogic-operator
 helm uninstall -n monitoring prometheus-operator
 helm uninstall -n brm-demo-dev-apps efk
@@ -32,3 +31,4 @@ for file in $pvc;
   kubectl delete $file;
  done;
 rm -rf /app/jenkins/workspaces/brm-demo-dev-apps
+ ssh -i .ssh/id_rsa jmngdrpv019793 -t 'rm -r /data/brm*'
