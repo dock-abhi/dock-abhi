@@ -31,4 +31,5 @@ for file in $pvc;
   kubectl delete $file;
  done;
 rm -rf /app/jenkins/workspaces/brm-demo-dev-apps
- ssh -i .ssh/id_rsa jmngdrpv019793 -t 'rm -r /data/brm*'
+ssh -i .ssh/id_rsa jmngdrpv019794 -t ' sudo umount -lf /export/brm-demo-dev-apps && sudo rmdir  /export/brm-demo-dev-apps'
+ssh -i .ssh/id_rsa jmngdrpv019793 -t 'rm -r /data/brm*'
